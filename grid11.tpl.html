@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th ng-repeat="title in titles track by $index">
+            <button ng-click="sortBy(title)">{{title}}</button>
+            <span class="sortorder" ng-show="propertyName === title" ng-class="{reverseStyle : reverse}"></span>
+        </th>
+    </tr>
+    <tr>
+        <td ng-repeat="title in titles track by $index">
+            <input type="text" ng-model="$parent.q[title]">
+        </td>
+    </tr>
+    <tr ng-repeat="friend in friends | filter:q:false">
+        <td ng-repeat="title in titles"><span>{{friend[title]}}</td>
+    </tr>
+</table>

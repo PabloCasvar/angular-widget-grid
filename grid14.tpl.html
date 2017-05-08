@@ -1,0 +1,20 @@
+<span>version 14</span>
+<ul>
+    <li ng-repeat="item in this.config">{{this.num}}</li>
+</ul>
+<table>
+    <tr>
+        <th ng-repeat="title in arrayConfTitles">
+            <button ng-click="sortBy(title)">{{title}}</button>
+            <span class="sortorder" ng-show="propertyName === title" ng-class="{reverseStyle : reverse}"></span>
+        </th>
+    </tr>
+    <tr>
+        <td ng-repeat="title in arrayConfTitles">
+            <input type="text" ng-model="$parent.q[title]">
+        </td>
+    </tr>
+    <tr ng-repeat="obj in arrayObjs | filter:q:false">
+        <td ng-repeat="title in arrayConfTitles"><span>{{obj[title]}}</td>
+    </tr>
+</table>

@@ -1,0 +1,24 @@
+name: <input type="text" ng-model="q.name"><br>
+phone: <input type="text" ng-model="q.phone"><br>
+age: <input type="text" ng-model="q.age"><br>
+<!--div ng-repeat="(key, value) in friends[0]">
+    <input type="text" ng-model="q[key]">
+</div-->
+<span style="border: 1px solid red;">{{name}}</span>
+
+<table>
+    <tr>
+        <th ng-repeat="(key, value) in friends[0]">
+            <button ng-click="sortBy(key)">{{key}}</button>
+            <span class="sortorder" ng-show="propertyName === key" ng-class="{reverseStyle : reverse}"></span>
+        </th>
+    </tr>
+    <tr>
+        <!--td ng-repeat="(key, value) in friends[0]">
+            <input type="text" ng-model="dummy" ng-change=filterBy(key)>
+        </td-->
+    </tr>
+    <tr ng-repeat="friend in friends">
+        <td ng-repeat="(key, value) in friend">{{value}}</td>
+    </tr>
+</table>

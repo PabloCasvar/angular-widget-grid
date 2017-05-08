@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>-->
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-app="myApp">
+    <div  ng-controller="ExampleController">
+        <div>
+            <label>Name:</label>
+            <input type="text" ng-model="yourName" placeholder="Enter a name here">
+            <hr>
+            <h1>Hello {{yourName}}!</h1>
+        </div>
+
+        <span 
+        ng-init='arreglo = [
+            {"name": "John",   "phone": "555-1212",  "age": 10},
+            {"name": "Mary",   "phone": "555-9876",  "age": 19},
+            {"name": "Mike",   "phone": "555-4321",  "age": 21},
+            {"name": "Adam",   "phone": "555-5678",  "age": 35},
+            {"name": "Julie",  "phone": "555-8765",  "age": 29},
+            {"name": "Raúl",   "phone": "555-8754",  "age": 50}]'
+        ></span>
+
+        <span 
+        ng-init='arreglo2 = [
+            {"name": "John",   "phone": "555-1212",  "age": 10},
+            {"name": "Mary",   "phone": "555-9876",  "age": 19},
+            {"name": "Mike",   "phone": "555-4321",  "age": 21},
+            {"name": "Adam",   "phone": "555-5678",  "age": 35},
+            {"name": "Julie",  "phone": "555-8765",  "age": 29},
+            {"name": "Raúl",   "phone": "555-8754",  "age": 50},
+            {"nickname": "Pepe",  "age": 45, "name":"José"},
+            {"age": 17, "name":"Alberto", "nickname":"Beto", "phone":"01-800-27"}]'
+        ></span>
+        <span ng-init='conf = [
+            {"name": "name", "titleColumn": "Nombres"},
+            {"name": "age", "titleColumn": "edad"},
+            {"name": "phone"},
+            {"name": "hola"},
+            {"name": "nickname"}]'></span>
+
+        <grid-component-17
+            objeto = arreglo2
+            config = conf
+            num    = 3
+        ></grid-component-17>
+
+        <br><br>
+
+        <grid-component-16
+            objeto = arreglo2
+            config = conf
+            num = 3
+        ></grid-component-16>
+
+        <br><br>
+
+        <grid-component-15
+            objeto = arreglo2
+            config = conf
+            num = 3
+        ></grid-component-15>
+
+        <br><br>
+
+        <grid-component-14
+            objeto = arreglo2
+            config = conf
+            num = 3
+        ></grid-component-14>
+
+        <br><br>
+                
+        <grid-component-13
+            objeto = arreglo2
+            config = conf
+        ></grid-component-13>
+
+        <br><br>
+                
+        <grid-component-12
+            objeto = arreglo2
+            config = conf
+        ></grid-component-12>
+
+        <br><br>
+
+        <grid-component-11
+            objeto = arreglo2
+        ></grid-component-11>
+
+        <br><br>
+
+        <grid-component-10
+            objeto = arreglo
+        ></grid-component-10>
+
+        <br><br>
+        
+        <grid-component-9
+            objeto = arreglo
+        ></grid-component-9>
+
+        <br><br>
+
+        <!--grid-component-8
+            objeto = arreglo
+        ></grid-component-8-->
+
+        <br><br>
+
+        <grid-component-7
+            objeto = arreglo
+        ></grid-component-7>
+
+        <br><br>
+
+        <grid-component-6
+            objeto = arreglo
+        ></grid-component-6>
+
+        <br><br>
+
+        <grid-component-6 
+            objeto = '[
+            {"name": "John",   "phone": "555-1212",  "age": 10},
+            {"name": "Mary",   "phone": "555-9876",  "age": 19},
+            {"name": "Mike",   "phone": "555-4321",  "age": 21},
+            {"name": "Adam",   "phone": "555-5678",  "age": 35},
+            {"name": "Julie",  "phone": "555-8765",  "age": 29}]'
+        ></grid-component-6>
+
+        <br><br>
+
+        <grid-component-5 
+            cadena="hola" 
+            numero="3" 
+            objeto='[
+            {"name": "John",   "phone": "555-1212",  "age": 10},
+            {"name": "Mary",   "phone": "555-9876",  "age": 19},
+            {"name": "Mike",   "phone": "555-4321",  "age": 21},
+            {"name": "Adam",   "phone": "555-5678",  "age": 35},
+            {"name": "Julie",  "phone": "555-8765",  "age": 29}]'
+        ></grid-component-5>
+
+        <br><br>
+
+        <grid-component-4></grid-component-4><br><br>
+
+
+        <table>
+            <tr>
+                <th>
+                    <button ng-click="sortBy('name')">Name</button>
+                    <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverseStyle : reverse}"></span>
+                </th>
+                <th>
+                    <button ng-click="sortBy('phone')">Phone</button>
+                    <span class="sortorder" ng-show="propertyName === 'phone'" ng-class="{reverseStyle : reverse}"></span>
+                </th>
+                <th>
+                    <button ng-click="sortBy('age')">Age</button>
+                    <span class="sortorder" ng-show="propertyName === 'age'" ng-class="{reverseStyle : reverse}"></span>
+                </th>
+            </tr>
+            <tr ng-repeat="friend in friends">
+                <td>{{friend.name}}</td>
+                <td>{{friend.phone}}</td>
+                <td>{{friend.age}}</td>
+            </tr>
+        </table> <br><br><br>
+
+        <grid-directive></grid-directive>
+          
+    </div>
+  </body>
+</html>

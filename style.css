@@ -1,0 +1,11 @@
+.sortorder::after{
+    content: '\25b2';
+}
+
+.sortorder.reverseStyle::after{
+    content: '\25bc';
+}
+
+table input {
+    max-width: 50px;
+}

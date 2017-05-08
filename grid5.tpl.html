@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th ng-repeat="(key, value) in friends[0]">
+            <button ng-click="sortBy(key)">{{key}}</button>
+            <span class="sortorder" ng-show="propertyName === key" ng-class="{reverseStyle : reverse}"></span>
+        </th>
+    </tr>
+    <tr ng-repeat="friend in friends">
+        <td ng-repeat="(key, value) in friend">{{value}}</td>
+    </tr>
+</table>
+
+<span>{{$ctrl.cadena}}</span><br>
+<span>{{cadenita}}</span><br>
+
+<span>{{$ctrl.numero}}</span><br>
+<span>{{numerito}}</span><br>

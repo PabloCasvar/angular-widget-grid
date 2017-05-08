@@ -1,0 +1,20 @@
+<span>version 15</span>
+<!--ul>
+    <li ng-repeat="item in grid.config">{{grid.num}}</li>
+</ul-->
+<table>
+    <tr>
+        <th ng-repeat="title in grid.arrayConfTitles">
+            <button ng-click="grid.sortBy(title)">{{title}}</button>
+            <span class="sortorder" ng-show="grid.propertyName === title" ng-class="{reverseStyle : reverse}"></span>
+        </th>
+    </tr>
+    <tr>
+        <td ng-repeat="title in grid.arrayConfTitles">
+            <input type="text" ng-model="$parent.q[title]">
+        </td>
+    </tr>
+    <tr ng-repeat="obj in grid.arrayObjs | filter:q:false">
+        <td ng-repeat="title in grid.arrayConfTitles"><span>{{obj[title]}}</td>
+    </tr>
+</table>

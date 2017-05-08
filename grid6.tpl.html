@@ -1,0 +1,13 @@
+<input type="text" ng-model="q">
+<table>
+    <tr>
+        <th ng-repeat="(key, value) in friends[0]">
+            <button ng-click="sortBy(key)">{{key}}</button>
+            <span class="sortorder" ng-show="propertyName === key" ng-class="{reverseStyle : reverse}"></span>
+        </th>
+    </tr>
+
+    <tr ng-repeat="friend in friends | filter: q : false">
+        <td ng-repeat="(key, value) in friend">{{value}}</td>
+    </tr>
+</table>
